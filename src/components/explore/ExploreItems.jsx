@@ -10,6 +10,7 @@ import NFTCardSkeleton from "../NFTCardSkeleton";
 const ExploreItems = () => {
   const [NFTs, setNFTs] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [visibleNFTs,setVisibleNFTs] = useState(8)
 
   async function fetchNFTs() {
     const { data } = await axios.get(
@@ -45,6 +46,10 @@ const ExploreItems = () => {
         ));
   }
 
+  function showMore() {
+    setVisibleNFTs((prev)=>prev+4)
+  }
+
   return (
     <>
       <div>
@@ -55,9 +60,9 @@ const ExploreItems = () => {
           <option value="likes_high_to_low">Most liked</option>
         </select>
       </div>
-      {renderNFTs()}
+      {renderNFTs().slice(0,visibleNFTs)}
       <div className="col-md-12 text-center">
-        <Link to="" id="loadmore" className="btn-main lead">
+        <Link to="" id="loadmore" className="btn-main lead" onClick={showMore}>
           Load more
         </Link>
       </div>
