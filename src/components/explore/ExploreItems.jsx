@@ -8,7 +8,6 @@ const ExploreItems = () => {
   const [NFTs, setNFTs] = useState([]);
   const [loading, setLoading] = useState(true);
   const [visibleNFTs, setVisibleNFTs] = useState(8);
-  const [filter, setFilter] = useState()
 
   async function fetchNFTs(value) {
 
@@ -18,7 +17,6 @@ const ExploreItems = () => {
       );
     
     
-    console.log("fetched nfts")
     setNFTs(data);
     setLoading(false);
   }
