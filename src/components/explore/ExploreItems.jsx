@@ -8,17 +8,23 @@ const ExploreItems = () => {
   const [NFTs, setNFTs] = useState([]);
   const [loading, setLoading] = useState(true);
   const [visibleNFTs, setVisibleNFTs] = useState(8);
+  const [filter, setFilter] = useState()
 
-  async function fetchNFTs() {
-    const { data } = await axios.get(
-      "https://us-central1-nft-cloud-functions.cloudfunctions.net/explore"
-    );
+  async function fetchNFTs(value) {
+
+
+      const { data } = await axios.get(
+        `https://us-central1-nft-cloud-functions.cloudfunctions.net/explore?filter=${value}`
+      );
+    
+    
+    console.log("fetched nfts")
     setNFTs(data);
     setLoading(false);
   }
 
-  useEffect(() => {
-    fetchNFTs();
+  useEffect(() => { 
+    fetchNFTs("");
   }, []);
 
   function renderNFTs() {
@@ -55,7 +61,7 @@ const ExploreItems = () => {
   return (
     <>
       <div>
-        <select id="filter-items" defaultValue="">
+        <select id="filter-items" defaultValue="" onChange={(event) => fetchNFTs(event.target.value)}>
           <option value="">Default</option>
           <option value="price_low_to_high">Price, Low to High</option>
           <option value="price_high_to_low">Price, High to Low</option>
