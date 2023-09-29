@@ -1,4 +1,3 @@
-  import React, { useEffect, useState } from "react";
   import NFTCardSkeleton from "../NFTCardSkeleton";
   import CountdownTimer from "../CountdownTimer";
   import { Link } from "react-router-dom";

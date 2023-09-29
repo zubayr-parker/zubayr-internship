@@ -17,7 +17,6 @@ const Author = () => {
 
     setNFTs(data.nftCollection);
     setAuthorInfo(data);
-    console.log(data);
     setLoading(false);
   }
 
