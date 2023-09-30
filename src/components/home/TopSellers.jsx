@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 const TopSellers = () => {
@@ -17,7 +16,7 @@ const TopSellers = () => {
   }
 
   useEffect(() => {
-    fetchTopSellers(); AOS.init()
+    fetchTopSellers();
   }, []);
 
   function renderTopSellers() {

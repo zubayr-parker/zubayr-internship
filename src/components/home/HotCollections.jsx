@@ -5,7 +5,6 @@ import { useState, useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 
@@ -23,7 +22,7 @@ const HotCollections = () => {
   }
 
   useEffect(() => {
-    fetchNFTs(); AOS.init()
+    fetchNFTs();
   }, []);
 
   const settings = {

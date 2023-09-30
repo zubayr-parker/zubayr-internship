@@ -1,11 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import axios from "axios";
 import Slider from "react-slick";
-import AOS from 'aos';
 import 'aos/dist/aos.css';
-
-import CountdownTimer from "../CountdownTimer";
 import NFTCard from "../NFTCard";
 import NFTCardSkeleton from "../NFTCardSkeleton";
 
@@ -22,7 +18,7 @@ const NewItems = () => {
   }
 
   useEffect(() => {
-    fetchNFTs(); AOS.init()
+    fetchNFTs();
   }, []);
 
   const settings = {
