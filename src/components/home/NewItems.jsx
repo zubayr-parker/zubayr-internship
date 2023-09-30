@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import axios from "axios";
 import Slider from "react-slick";
-
-import CountdownTimer from "../CountdownTimer";
+import 'aos/dist/aos.css';
 import NFTCard from "../NFTCard";
 import NFTCardSkeleton from "../NFTCardSkeleton";
 
@@ -73,7 +71,7 @@ const NewItems = () => {
   }
 
   return (
-    <section id="section-items" className="no-bottom">
+    <section id="section-items" className="no-bottom" data-aos="fade-in">
       <div className="container">
         <div className="row">
           <div className="col-lg-12">

@@ -5,6 +5,8 @@ import { useState, useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import 'aos/dist/aos.css';
+
 
 const HotCollections = () => {
   const [NFTs, setNFTs] = useState([]);
@@ -21,7 +23,7 @@ const HotCollections = () => {
 
   useEffect(() => {
     fetchNFTs();
-  }, [loading]);
+  }, []);
 
   const settings = {
     infinite: true,
@@ -127,7 +129,7 @@ const HotCollections = () => {
   }
 
   return (
-    <section id="section-collections" className="no-bottom">
+    <section id="section-collections" className="no-bottom" data-aos="fade-in">
       <div className="container">
         <div className="row">
           <div className="col-lg-12">
