@@ -3,7 +3,7 @@
   import { Link } from "react-router-dom";
 
   const AuthorItems = ({NFTs, loading, authorInfo}) => {
-   //any comment 
+  //from main!!! DO NOT REMOVE  
     function renderNFTs() {
       return loading
         ? new Array(8).fill(0).map((_, index) => (
